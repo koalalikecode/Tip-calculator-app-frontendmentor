@@ -23,9 +23,9 @@ body {
 }
 
 .background {
-  margin:auto;
   background-color: var(--Light-grayish-cyan);
-  width: 1440px;
+  width: 100%;
+  height: 100%;
   padding: 140px 0;
 }
 
@@ -154,7 +154,7 @@ input[type=number] {
   cursor: pointer;
 }
 
-.active{
+.unchange-percentage.active{
   background-color: var(--Strong-cyan);
   color: var(--Very-dark-cyan);
 }
@@ -208,11 +208,11 @@ input[type=number] {
 
 .reset{
   width:100%;
-  height: 40px;
+  height: 46px;
   border:none;
   background-color: #0D686D;
   color:var(--Very-dark-cyan);
-  margin-top:100px;
+  margin-top:96px;
   font-weight: 700;
   font-size: 16px;
   border-radius: 5px;
@@ -233,4 +233,58 @@ input[type=number] {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media(max-width: 800px) {
+  .background{
+    padding: 40px 0 0 0;
+  }
+  .container{
+    width: 100%;
+    display:block;
+    margin: 36px 0 0 0;
+    padding: 24px 24px 0 24px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .input{
+    width:100%;
+    height:fit-content;
+    padding: 12px 12px 28px 12px
+  }
+  .unchange-percentage, .custom-percentage{
+    width: 47%;
+  }
+
+  .input-select{
+    margin: 24px 0 12px;
+  }
+  .output{
+    width:100%;
+    height:fit-content;
+    padding: 36px 20px 20px
+  }
+
+  .output-box{
+    margin-bottom: 24px;
+  }
+  .output-number p{
+    font-size: 36px;
+  }
+  .unchange-percentage:hover{
+    color:var(--Light-grayish-cyan-2);
+    background-color: var(--Very-dark-cyan);
+
+  }
+  .unchange-percentage.active{
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+  }
+  .reset{
+    margin-top:4px;
+  }
+
+  .attribution{
+    display: none;
+  }
 }

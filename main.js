@@ -10,20 +10,14 @@ var resetBtn = document.querySelector(".reset");
 // Calculate the tip amount and return output
 function typeOfSelectTip() {
   let activeTip = document.querySelector(".active");
+  let x = Number(bill.value) * Number(people_num.value);
   if (activeTip) {
     tipAmount.innerText = `$${parseFloat(
-      (Number(bill.value) *
-        Number(people_num.value) *
-        Number(activeTip.value)) /
-        100
+      (x * Number(activeTip.value)) / 100
     ).toFixed(2)}`;
   } else if (customTip.value !== "") {
-    (bill.value * people_num.value * customTip.value) / 100;
     tipAmount.innerText = `$${parseFloat(
-      (Number(bill.value) *
-        Number(people_num.value) *
-        Number(customTip.value)) /
-        100
+      (x * Number(customTip.value)) / 100
     ).toFixed(2)}`;
   } else {
     tipAmount.innerText = "$0.00";
@@ -33,17 +27,14 @@ function typeOfSelectTip() {
 // Calculate the total and return output
 function caculateTotal() {
   let activeTip = document.querySelector(".active");
+  let x = Number(bill.value) * Number(people_num.value);
   if (activeTip) {
     total.innerText = `$${parseFloat(
-      Number(bill.value) *
-        Number(people_num.value) *
-        (Number(activeTip.value) / 100 + 1)
+      x * (Number(activeTip.value) / 100 + 1)
     ).toFixed(2)}`;
   } else if (customTip.value !== "") {
     total.innerText = `$${parseFloat(
-      Number(bill.value) *
-        Number(people_num.value) *
-        (Number(customTip.value) / 100 + 1)
+      x * (Number(customTip.value) / 100 + 1)
     ).toFixed(2)}`;
   } else {
     total.innerText = `$${parseFloat(
@@ -69,13 +60,13 @@ function reset() {
 
 function start() {
   // Check the bill input and return output
-  bill.onblur = function () {
+  bill.onkeyup = function () {
     typeOfSelectTip();
     caculateTotal();
     reset();
   };
   // Check the people-number input and return output
-  people_num.onblur = function () {
+  people_num.onkeyup = function () {
     typeOfSelectTip();
     caculateTotal();
     reset();
@@ -106,7 +97,7 @@ function start() {
 
   // if user blur the custom input
 
-  customTip.onblur = function () {
+  customTip.onkeyup = function () {
     let activeTip = document.querySelector(".active");
     if (activeTip && customTip.value !== "") {
       activeTip.classList.remove("active");
@@ -130,6 +121,7 @@ function start() {
       tipAmount.innerText = "$0.00";
       total.innerText = "$0.00";
       resetBtn.classList.remove("active-reset");
+      people_input.classList.remove("error")
     }
   };
 }
