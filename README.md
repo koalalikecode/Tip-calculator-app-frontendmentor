@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/Tip-calculator-app.png)
+![Tip calculator app](./images/Tip-calculator-app.png)
 
 ### Links
 
