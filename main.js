@@ -10,39 +10,39 @@ var resetBtn = document.querySelector(".reset");
 // Calculate the tip amount and return output
 function typeOfSelectTip() {
   let activeTip = document.querySelector(".active");
-  let x = Number(bill.value) * Number(people_num.value);
-  if (activeTip) {
-    tipAmount.innerText = `$${parseFloat(
-      (x * Number(activeTip.value)) / 100
-    ).toFixed(2)}`;
-  } else if (customTip.value !== "") {
-    tipAmount.innerText = `$${parseFloat(
-      (x * Number(customTip.value)) / 100
-    ).toFixed(2)}`;
-  } else {
-    tipAmount.innerText = "$0.00";
+  let x = Number(bill.value) / Number(people_num.value);
+  if (people_num.value > 0) {
+    if (activeTip) {
+      tipAmount.innerText = `$${parseFloat(
+        (x * Number(activeTip.value)) / 100
+      ).toFixed(2)}`;
+    } else if (customTip.value !== "") {
+      tipAmount.innerText = `$${parseFloat(
+        (x * Number(customTip.value)) / 100
+      ).toFixed(2)}`;
+    } else {
+      tipAmount.innerText = "$0.00";
+    }
   }
 }
-
 // Calculate the total and return output
 function caculateTotal() {
   let activeTip = document.querySelector(".active");
-  let x = Number(bill.value) * Number(people_num.value);
-  if (activeTip) {
-    total.innerText = `$${parseFloat(
-      x * (Number(activeTip.value) / 100 + 1)
-    ).toFixed(2)}`;
-  } else if (customTip.value !== "") {
-    total.innerText = `$${parseFloat(
-      x * (Number(customTip.value) / 100 + 1)
-    ).toFixed(2)}`;
-  } else {
-    total.innerText = `$${parseFloat(
-      Number(bill.value) * Number(people_num.value)
-    ).toFixed(2)}`;
+  let x = Number(bill.value) / Number(people_num.value);
+  if (people_num.value > 0) {
+    if (activeTip) {
+      total.innerText = `$${parseFloat(
+        x * (Number(activeTip.value) / 100 + 1)
+      ).toFixed(2)}`;
+    } else if (customTip.value !== "") {
+      total.innerText = `$${parseFloat(
+        x * (Number(customTip.value) / 100 + 1)
+      ).toFixed(2)}`;
+    } else {
+      total.innerText = `$${parseFloat(x).toFixed(2)}`;
+    }
   }
 }
-
 // Check the reset button active (change the color of reset Button)
 function reset() {
   let activeTip = document.querySelector(".active");
@@ -121,7 +121,7 @@ function start() {
       tipAmount.innerText = "$0.00";
       total.innerText = "$0.00";
       resetBtn.classList.remove("active-reset");
-      people_input.classList.remove("error")
+      people_input.classList.remove("error");
     }
   };
 }
