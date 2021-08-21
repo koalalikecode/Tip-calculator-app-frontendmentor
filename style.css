@@ -15,15 +15,12 @@
 }
 body,
 html {
-  height: 100%;
   font-family: "Space Mono", monospace;
 }
 .background {
   position: relative;
   background-color: var(--Light-grayish-cyan);
-  height: 100%;
-  padding: 140px 0 0 0;
-  margin:auto;
+  padding: 140px 0 140px 0;
 }
 
 .background img {
