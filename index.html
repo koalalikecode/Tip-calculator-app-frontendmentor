@@ -19,70 +19,63 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <main class="background">
-      <img src="images/logo.svg" alt="background" />
-      <div class="container">
-        <div class="input">
-          <div class="input-enter">
-            <p>Bill</p>
-            <input type="number" class="bill" placeholder="0" min="0" />
-          </div>
+  <body class="background">
+    <img src="images/logo.svg" alt="background" />
+    <div class="container">
+      <div class="input">
+        <div class="input-enter">
+          <p>Bill</p>
+          <input type="number" class="bill" placeholder="0" min="0" />
+        </div>
 
-          <div class="input-select">
-            <p>Select Tip %</p>
-            <div class="input-select-box">
-              <button value="5" class="unchange-percentage">5%</button>
-              <button value="10" class="unchange-percentage">10%</button>
-              <button value="15" class="unchange-percentage">15%</button>
-              <button value="25" class="unchange-percentage">25%</button>
-              <button value="50" class="unchange-percentage">50%</button>
-              <input
-                type="number"
-                class="custom-percentage"
-                placeholder="Custom"
-              />
-            </div>
-          </div>
-
-          <div class="input-enter people">
-            <p>Number of People</p>
-            <span>Can't be zero</span>
+        <div class="input-select">
+          <p>Select Tip %</p>
+          <div class="input-select-box">
+            <button value="5" class="unchange-percentage">5%</button>
+            <button value="10" class="unchange-percentage">10%</button>
+            <button value="15" class="unchange-percentage">15%</button>
+            <button value="25" class="unchange-percentage">25%</button>
+            <button value="50" class="unchange-percentage">50%</button>
             <input
               type="number"
-              class="people-number"
-              placeholder="0"
-              min="0"
+              class="custom-percentage"
+              placeholder="Custom"
             />
           </div>
         </div>
 
-        <div class="output">
-          <div class="output-box">
-            <div class="output-name">
-              <p>Tip Amount</p>
-              <p>/ person</p>
-            </div>
-
-            <div class="output-number">
-              <p class="tip">$0.00</p>
-            </div>
-          </div>
-          <div class="output-box">
-            <div class="output-name">
-              <p>Total</p>
-              <p>/ person</p>
-            </div>
-
-            <div class="output-number">
-              <p class="total">$0.00</p>
-            </div>
-          </div>
-
-          <button class="reset">RESET</button>
+        <div class="input-enter people">
+          <p>Number of People</p>
+          <span>Can't be zero</span>
+          <input type="number" class="people-number" placeholder="0" min="0" />
         </div>
       </div>
-    </main>
+
+      <div class="output">
+        <div class="output-box">
+          <div class="output-name">
+            <p>Tip Amount</p>
+            <p>/ person</p>
+          </div>
+
+          <div class="output-number">
+            <p class="tip">$0.00</p>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-name">
+            <p>Total</p>
+            <p>/ person</p>
+          </div>
+
+          <div class="output-number">
+            <p class="total">$0.00</p>
+          </div>
+        </div>
+
+        <button class="reset">RESET</button>
+      </div>
+    </div>
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
